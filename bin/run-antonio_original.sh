@@ -8,19 +8,17 @@ fi;
 if [ -d "${COMPUTE_KEEP_DIR}" ]; then
     checkpoint_dir=$COMPUTE_KEEP_DIR
 else
-    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/test"))')
+    checkpoint_dir=$(python -c 'from xdg import BaseDirectory as xdg; print(xdg.save_data_path("deepspeech/data/audio_files_antonio"))')
 fi
 
 # Force only one visible device because we have a single-sample dataset
 # and when trying to run on multiple devices (like GPUs), this will break
 export CUDA_VISIBLE_DEVICES=0
 
-python -u DeepSpeech.py --noshow_progressbar \
-  --train_files data/test/test_excel.csv \
-  --test_files data/test/test_excel.csv \
+python -u DeepSpeech.py \
+  --train_files data/audio_files_antonio/antonio.csv \
   --train_batch_size 1 \
-  --test_batch_size 1 \
   --n_hidden 100 \
-  --epochs 100 \
-  --checkpoint_dir "$checkpoint_dir" \
-  "$@"
+  --epochs 200 \
+#  --checkpoint_dir "$checkpoint_dir" \
+#  "$@"

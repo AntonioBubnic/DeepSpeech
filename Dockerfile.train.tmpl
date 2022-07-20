@@ -3,7 +3,7 @@
 FROM tensorflow/tensorflow:1.15.4
 ENV DEBIAN_FRONTEND=noninteractive \
     DEEPSPEECH_REPO=https://github.com/AntonioBubnic/DeepSpeech.git \
-    DEEPSPEECH_SHA=deepspeech-sc
+    DEEPSPEECH_SHA=master
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \

@@ -3,9 +3,10 @@
 # Need devel version cause we need /usr/include/cudnn.h 
 FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
-ENV DEEPSPEECH_REPO=#DEEPSPEECH_REPO# \
-    DEEPSPEECH_SHA=#DEEPSPEECH_SHA#
-
+ENV DEEPSPEECH_REPO=https://github.com/AntonioBubnic/DeepSpeech.git \
+    DEEPSPEECH_SHA=master
+#ENV DEEPSPEECH_REPO=#DEEPSPEECH_REPO# \
+#    DEEPSPEECH_SHA=#DEEPSPEECH_SHA#
 # >> START Install base software
 
 # Get basic packages

@@ -36,7 +36,7 @@ df = pandas.DataFrame(
         data=[(os.path.abspath("C:/Users/Korisnik/Desktop/deepspeech_git/DeepSpeech/data/test/4ab96362a9e1e514860c8b19787051a8.wav"), os.path.getsize("C:/Users/Korisnik/Desktop/deepspeech_git/DeepSpeech/data/test/4ab96362a9e1e514860c8b19787051a8.wav"), "Upali ledicu")],
         columns=["wav_filename", "wav_filesize", "transcript"],
     )
-df.to_csv(os.path.join("C:/Users/Korisnik/Desktop/deepspeech_git/DeepSpeech//data/test", "test_excel1.csv"), index=False)
+df.to_csv(os.path.join("C:/Users/Korisnik/Desktop/deepspeech_git/DeepSpeech/data/test", "test_excel1.csv"), index=False)
 
 #if __name__ == "__main__":
 #    _download_and_preprocess_data(sys.argv[1])
